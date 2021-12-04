@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <style>
+    @import url(https://cdn.jsdelivr.net/npm/firacode@6.1.0/distr/fira_code.css);
+
     body {
       padding: 20px;
-      font-family: monospace;
+      font-family: 'Fira Code', monospace;
       font-size: 16px;
       line-height: 1.6;
       background: #F5F5F5;
@@ -27,7 +29,7 @@
     footer {
       padding: 10px;
       opacity: 0.5;
-      font-size: 10px;
+      font-size: 12px;
       text-align: center;
     }
   </style>
@@ -41,6 +43,35 @@
 
       <p>Most of the DNS zone is in a private network so there isn't much to see
        here.</p>
+
+      <h2>⚙️ Setup</h2>
+
+      <ul>
+        <li>Mikrotik RB4011iGS+RM</li>
+        <li>Netgear GS308-300PES</li>
+        <li>2x Xiaomi Mi WiFi R3G</li>
+          <ul style="list-style-type:none;">
+            <li>Running
+              <a href="https://gitlab.com/dm38/padavan-ng">padavan-ng</a></li>
+          </ul>
+        <li>QNAP TS-873A</li>
+          <ul style="list-style-type:none;">
+            <li>AMD Ryzen™ Embedded V1500B</li>
+            <li>64GB Kingston DDR4-2666 ECC Unbuffered</li>
+            <li>2x 500GB Samsung 980</li>
+            <li>8x 12To Ultrastar HC530 (shucked drives)</li>
+            <li>PNY NVIDIA Quadro P1000</li>
+          </ul>
+        <li>T-bao Tbook MN25</li>
+          <ul style="list-style-type:none;">
+            <li>AMD Ryzen™ 5 2500U</li>
+            <li>16GB Corsair DDR4-2666</li>
+            <li>500GB Samsung 980</li>
+          </ul>
+      </ul>
+
+      For more details, see the respective
+       <a href="https://wiki.martinsimon.me/hardware/TS873A/">wiki page</a>.
 
       <h2>👋 Get in touch</h2>
 
