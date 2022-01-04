@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>🧑‍💻 homelab.lu</title>
+    <title>homelab.lu</title>
     <meta charset="utf-8">
     <meta name="description" content="homelab.lu - a tinkering domain">
     <meta name="robots" content="index, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧑‍💻</text></svg>">
     <script defer data-domain="homelab.lu" src="https://plausible.io/js/plausible.outbound-links.js"></script>
   </head>
+  <script type="text/javascript">
+    async function gethomeip() {
+      const QUERY = "d4480ce7ee42.sn.mynetname.net";
+      const RR_TYPE = "A";
+
+      let url = `https://dns.google/resolve?name=${QUERY}&type=${RR_TYPE}`;
+      let response = await fetch(url);
+
+      if (response.ok) {
+        let json = await response.json();
+        return json.Answer[0].data;
+      } else {
+        return `HTTP error: ${response.status}`;
+      }
+    }
+
+    async function getuserip() {
+      let url = 'https://icanhazip.com/';
+      let response = await fetch(url);
+
+      if (response.ok) {
+        let text = await response.text();
+        return text.trim();
+      } else {
+        return `HTTP error: ${response.status}`;
+      }
+    }
+
+    async function compareip() {
+      var homeaddress = await gethomeip();
+      var currentaddress = await getuserip();
+
+      if (homeaddress === currentaddress) {
+        document.getElementById('services').style.display = 'block';
+      }
+      else {
+      }
+    }
+    compareip();
+  </script>
   <style>
     @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 
@@ -25,6 +66,22 @@
       padding: 20px;
       background-color: white;
       border-radius: 10px;
+    }
+
+    .flex-container {
+      padding-top: 5px;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .flex-container > div {
+      width: 100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    #services {
+       display: none;
     }
 
     footer {
@@ -109,7 +166,6 @@
             <li><strong>CPU: </strong>AMD Ryzen™ 5 2500U w/ Radeon™ Vega 8 Graphics</li>
             <li><strong>RAM: </strong>16GB <em>(2x8GB)</em> Corsair DDR4-2666</li>
             <li><strong>Storage: </strong>500GB Samsung 980</li>
-            </br>
           </ul>
       </ul>
 
@@ -127,6 +183,40 @@
 
       For more details on each device, refer to the respective
        <a href="https://wiki.martinsimon.me/hardware/TS873A/">wiki page</a>.
+
+      <div id="services">
+        <h2>📡 Services</h2>
+
+        <div class="flex-container">
+          <div>
+            <img src="./images/grafana.svg" width="64px" height="64px">
+            <a href="https://grafana.homelab.lu">Grafana</a>
+          </div>
+          <div>
+            <img src="./images/nas.svg" width="64px" height="64px">
+            <a href="https://nas.homelab.lu">NAS</a>
+          </div>
+          <div>
+            <img src="./images/plex.svg" width="64px" height="64px">
+            <a href="https://plex.homelab.lu">Plex</a>
+          </div>
+        </div>
+        <br>
+        <div class="flex-container">
+          <div>
+            <img src="./images/rutorrent.svg" width="64px" height="64px">
+            <a href="https://rutorrent.homelab.lu">ruTorrent</a>
+          </div>
+          <div>
+            <img src="./images/terminal.svg" width="64px" height="64px">
+            <a href="https://term.homelab.lu">Terminal</a>
+          </div>
+          <div>
+            <img src="./images/urbackup.svg" width="64px" height="64px">
+            <a href="https://backup.homelab.lu">urBackup</a>
+          </div>
+        </div>
+      </div>
 
       <h2>👋 Get in touch</h2>
 
