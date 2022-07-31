@@ -57,6 +57,7 @@
       font-family: 'Fira Code', monospace;
       font-size: 16px;
       line-height: 1.6;
+      color: #000000;
       background: #F5F5F5;
     }
 
@@ -64,7 +65,7 @@
       max-width: 720px;
       margin: 0 auto;
       padding: 20px;
-      background-color: white;
+      background-color: #FFFFFF;
       border-radius: 10px;
     }
 
@@ -89,6 +90,27 @@
       opacity: 0.5;
       font-size: 12px;
       text-align: center;
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      body {
+        color: #F5F5F5;
+        background: #000000;
+      }
+
+      #content {
+        background-color: #212224;
+      }
+
+      #services .flex-container img {
+        -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+        filter: invert(100%);
+      }
+
+      a {
+        color: #58a6ff;
+      }
     }
   </style>
   <body>
@@ -177,12 +199,12 @@
         <li>Xiaomi Mi WiFi R3G (x2)</li>
           <ul style="list-style-type: none;">
             <li><strong>Firmware: </strong>Running
-              <a href="https://gitlab.com/dm38/padavan-ng">padavan-ng</a></li>
+              <a href="https://gitlab.com/dm38/padavan-ng" target="_blank" rel="noopener noreferrer">padavan-ng</a></li>
           </ul>
       </ul>
 
       For more details on each device, refer to the respective
-       <a href="https://wiki.martinsimon.me/hardware/TS873A/">wiki page</a>.
+       <a href="https://wiki.martinsimon.me/hardware/TS873A/" target="_blank" rel="noopener noreferrer">wiki page</a>.
 
       <div id="services">
         <h2>📡 Services</h2>
@@ -190,30 +212,30 @@
         <div class="flex-container">
           <div>
             <img src="./images/grafana.svg" width="64px" height="64px">
-            <a href="https://grafana.homelab.lu">Grafana</a>
+            <a href="https://grafana.homelab.lu" target="_blank" rel="noopener noreferrer">Grafana</a>
           </div>
           <div>
             <img src="./images/nas.svg" width="64px" height="64px">
-            <a href="https://nas.homelab.lu">NAS</a>
+            <a href="https://nas.homelab.lu" target="_blank" rel="noopener noreferrer">NAS</a>
           </div>
           <div>
             <img src="./images/plex.svg" width="64px" height="64px">
-            <a href="https://plex.homelab.lu">Plex</a>
+            <a href="https://plex.homelab.lu" target="_blank" rel="noopener noreferrer">Plex</a>
           </div>
         </div>
         <br>
         <div class="flex-container">
           <div>
             <img src="./images/rutorrent.svg" width="64px" height="64px">
-            <a href="https://rutorrent.homelab.lu">ruTorrent</a>
+            <a href="https://rutorrent.homelab.lu" target="_blank" rel="noopener noreferrer">ruTorrent</a>
           </div>
           <div>
             <img src="./images/terminal.svg" width="64px" height="64px">
-            <a href="https://term.homelab.lu">Terminal</a>
+            <a href="https://term.homelab.lu" target="_blank" rel="noopener noreferrer">Terminal</a>
           </div>
           <div>
             <img src="./images/urbackup.svg" width="64px" height="64px">
-            <a href="https://backup.homelab.lu">urBackup</a>
+            <a href="https://backup.homelab.lu" target="_blank" rel="noopener noreferrer">urBackup</a>
           </div>
         </div>
       </div>
@@ -222,13 +244,13 @@
 
       <ul style="list-style-type: none;">
         <li>Email: root [at] homelab.lu</a></li>
-        <li>Twitter: <a href="https://twitter.com/barnumbirr">
+        <li>Twitter: <a href="https://twitter.com/barnumbirr" target="_blank" rel="noopener noreferrer">
         @barnumbirr</a></li>
       </ul>
     </div>
   </body>
   <footer>
     <div>&copy; 2021<script>new Date().getFullYear()>2021&&document.write("-"+new Date().getFullYear());</script> homelab.lu</div>
-    <div><a href="https://github.com/barnumbirr/homelab.lu">Source</a></div>
+    <div><a href="https://github.com/barnumbirr/homelab.lu" target="_blank" rel="noopener noreferrer">Source</a></div>
   </footer>
 </html>
